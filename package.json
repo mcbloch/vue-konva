@@ -1,6 +1,6 @@
 {
   "name": "vue-konva",
-  "version": "2.1.7",
+  "version": "3.0.3",
   "description": "Vue binding to canvas element via Konva framework",
   "keywords": [
     "vue",
@@ -9,15 +9,14 @@
   ],
   "homepage": "https://github.com/konvajs/vue-konva#readme",
   "author": "Rafael Escala <rafaesc92@gmail.com>",
-  "main": "umd/vue-konva.js",
-  "types": "index.d.ts",
+  "main": "dist/vue-konva.umd.js",
+  "types": "dist/index.d.ts",
   "vetur": {
     "tags": "vetur/tags.json",
     "attributes": "vetur/attributes.json"
   },
   "files": [
-    "umd",
-    "index.d.ts",
+    "dist/",
     "vetur/"
   ],
   "funding": [
@@ -43,23 +42,30 @@
     "url": "https://github.com/konvajs/vue-konva/issues"
   },
   "scripts": {
-    "build": "nwb build",
-    "clean": "nwb clean-module && nwb clean-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "build": "vite build",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "format": "prettier --write ."
   },
   "peerDependencies": {
-    "konva": ">3.2.5"
+    "konva": ">7",
+    "vue": "^3"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.25",
-    "chai": "^4.2.0",
-    "konva": ">3.2.5",
-    "nwb": "^0.25.2",
-    "sinon": "^7.3.0",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+    "@vitest/coverage-c8": "^0.30.1",
+    "@vue/compiler-sfc": "^3.2.31",
+    "@vue/test-utils": "^2.3.2",
+    "canvas": "^2.11.2",
+    "eslint": "^8.38.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "jsdom": "^21.1.1",
+    "konva": ">7",
+    "prettier": "^3.0.0-alpha.7-for-vscode",
+    "typescript": "^5.0.4",
+    "vite": "^4.2.2",
+    "vite-plugin-dts": "^2.3.0",
+    "vitest": "^0.30.1",
+    "vue": "3.2"
   },
   "engines": {
     "node": ">= 4.0.0",
